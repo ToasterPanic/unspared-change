@@ -1,0 +1,84 @@
+[gd_scene load_steps=14 format=4 uid="uid://dkbm61sa3n4r0"]
+
+[ext_resource type="Texture2D" uid="uid://d3fq4esvr3x2c" path="res://images/background-front.png" id="1_p57ef"]
+[ext_resource type="Script" uid="uid://cqeeh1gaf4e41" path="res://scripts/parallax.gd" id="1_u5sy4"]
+[ext_resource type="Texture2D" uid="uid://daapf2xnsman8" path="res://images/coin.png" id="1_uwrxv"]
+[ext_resource type="Script" uid="uid://b1jhjlau3i0lt" path="res://scenes/coin.gd" id="1_yqjtg"]
+[ext_resource type="Texture2D" uid="uid://cpai71pxjo84c" path="res://images/tile2.png" id="2_lbhrr"]
+[ext_resource type="Texture2D" uid="uid://bhyhf8ybu8wj5" path="res://images/tile1.png" id="3_lnu2h"]
+[ext_resource type="Texture2D" uid="uid://dwh1pr46atjp3" path="res://images/GUM.png" id="5_iywne"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lnu2h"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
+texture = ExtResource("3_lnu2h")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iywne"]
+texture = ExtResource("2_lbhrr")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(32, -32, -32, -32, -32, 32)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(32, -32, 32, 32, -32, 32)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, 32, -32, 32)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(32, -32, 32, 32, -32, 32)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, 32, -32, 32)
+
+[sub_resource type="TileSet" id="TileSet_lbhrr"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 255
+physics_layer_0/collision_mask = 255
+physics_layer_0/physics_material = SubResource("PhysicsMaterial_lnu2h")
+sources/0 = SubResource("TileSetAtlasSource_lnu2h")
+sources/1 = SubResource("TileSetAtlasSource_iywne")
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_iywne"]
+rough = true
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yqjtg"]
+radius = 62.0
+
+[node name="Game" type="Node2D"]
+
+[node name="Parallax" type="Node2D" parent="."]
+script = ExtResource("1_u5sy4")
+
+[node name="ParallaxFront" type="Sprite2D" parent="Parallax"]
+position = Vector2(1507, -2443)
+texture = ExtResource("1_p57ef")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(0, 393)
+tile_map_data = PackedByteArray("AAD+/wAAAQAAAAEAAAD9/wAAAQABAAAAAAD8////AQABAAAAAAAIAAAAAAAAAAAAAAD8//7/AAAAAAAAAAD8//3/AAAAAAAAAAD8//z/AAAAAAAAAAD8//v/AAAAAAAAAAD8//r/AAAAAAAAAAD8//n/AAAAAAAAAAD8//j/AAAAAAAAAAD8//f/AAAAAAAAAAD8//b/AAAAAAAAAAD8//X/AAAAAAAAAAD8//T/AAAAAAAAAAD8//P/AAAAAAAAAAD8//L/AAAAAAAAAAD8//H/AAAAAAAAAAD8//D/AAAAAAAAAAD8/+//AAAAAAAAAAD8/+7/AAAAAAAAAAD8/+3/AAAAAAAAAAD8/+z/AAAAAAAAAAD8/+v/AAAAAAAAAAD8/+r/AAAAAAAAAAD8/+n/AAAAAAAAAAD8/+j/AAAAAAAAAAD8/+f/AAAAAAAAAAD8/+b/AAAAAAAAAAD8/+X/AAAAAAAAAAD8/+T/AAAAAAAAAAD8/+P/AAAAAAAAAAD8/+L/AAAAAAAAAAD8/+H/AAAAAAAAAAD8/+D/AAAAAAAAAAD8/9//AAAAAAAAAAD8/97/AAAAAAAAAAD+/wEAAQABAAAAAAD//wIAAQABAAAAAAAAAAMAAQABAAAAAAABAAQAAQABAAAAAAACAAUAAQABAAAAAAADAAYAAQABAAAAAAAEAAcAAAAAAAAAAAD9////AQAAAAEAAAD//wEAAQAAAAEAAAAAAAIAAQAAAAEAAAABAAMAAQAAAAEAAAACAAQAAQAAAAEAAAADAAUAAQAAAAEAAAAEAAYAAQAAAAEAAAAIAAoAAAAAAAAAAAAIAAkAAAAAAAAAAAAIAAgAAAAAAAAAAAAIAAcAAAAAAAAAAAAIAAYAAAAAAAAAAAAIAAUAAAAAAAAAAAAIAAQAAAAAAAAAAAAIAAMAAAAAAAAAAAAIAAIAAAAAAAAAAAAIAAEAAAAAAAAAAAD8/93/AQAAAAEAAAD7/9z/AQAAAAEAAAD6/9v/AQAAAAEAAAD5/9r/AQAAAAEAAAD4/9n/AQAAAAEAAAD4/9r/AQABAAAAAAD5/9v/AQABAAAAAAD6/9z/AQABAAAAAAD7/93/AQABAAAAAAD//9T/AAAAAAAAAAD+/9T/AAAAAAAAAAD9/9T/AAAAAAAAAAD8/9T/AAAAAAAAAAD7/9T/AAAAAAAAAAD6/9T/AAAAAAAAAAD5/9T/AAAAAAAAAAD4/9T/AAAAAAAAAAD4/9X/AAAAAAAAAAAEAAoAAQAAAAAAAAADAAsAAQAAAAAAAAACAAwAAQAAAAAAAAABAA0AAQAAAAAAAAAAAA4AAAAAAAAAAAAAAA8AAAAAAAAAAAAAABAAAAAAAAAAAAAAABEAAAAAAAAAAAAAABIAAAAAAAAAAAAAABMAAAAAAAAAAAAAABQAAAAAAAAAAAAAABUAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA0AAQABAAEAAAABAAwAAQABAAEAAAACAAsAAQABAAEAAAADAAoAAQABAAEAAAAEAAkAAAAAAAAAAAAEAAgAAAAAAAAAAAAAABcAAQABAAAAAAABABcAAQAAAAEAAAAHABcAAAAAAAAAAAAIABcAAAAAAAAAAAAJABcAAAAAAAAAAAAKABcAAAAAAAAAAAALABcAAAAAAAAAAAAMABcAAAAAAAAAAAACABgAAQAAAAEAAAAEABoAAQAAAAEAAAAHAB0AAQAAAAEAAAACABkAAAAAAAAAAAACABoAAAAAAAAAAAACABsAAAAAAAAAAAACABwAAAAAAAAAAAACAB0AAAAAAAAAAAACAB4AAAAAAAAAAAACAB8AAAAAAAAAAAAEABsAAAAAAAAAAAAEABwAAAAAAAAAAAAEAB0AAAAAAAAAAAAEAB4AAAAAAAAAAAAEAB8AAAAAAAAAAAAHAB4AAAAAAAAAAAAHAB8AAAAAAAAAAAAHACAAAAAAAAAAAAABABgAAQABAAAAAAAFABgAAAAAAAAAAAAGABcAAQABAAEAAAAGABgAAAAAAAAAAAADABgAAAAAAAAAAAAEABgAAAAAAAAAAAAAANX/AAAAAAAAAAAAANb/AAAAAAAAAAAAANf/AAAAAAAAAAAAANj/AAAAAAAAAAAAANn/AAAAAAAAAAAAANr/AAAAAAAAAAAAANv/AAAAAAAAAAAAANz/AAAAAAAAAAAAAN3/AAAAAAAAAAAAAN7/AAAAAAAAAAAAAN//AAAAAAAAAAAAAOD/AAAAAAAAAAAAAOH/AAAAAAAAAAAAAOL/AAAAAAAAAAAAAOP/AAAAAAAAAAAAAOT/AAAAAAAAAAAAAOX/AAAAAAAAAAAAAOb/AAAAAAAAAAAAAOf/AAAAAAAAAAAAAOj/AAAAAAAAAAAAAOn/AAAAAAAAAAAAAOr/AAAAAAAAAAAAAOv/AAAAAAAAAAAAAOz/AAAAAAAAAAAAAO3/AAAAAAAAAAAAAO7/AAAAAAAAAAAAAO//AAAAAAAAAAAAAPD/AAAAAAAAAAAAAPH/AAAAAAAAAAAAAPL/AAAAAAAAAAAAAPP/AAAAAAAAAAAAAPT/AAAAAAAAAAAAAPX/AAAAAAAAAAAAAPb/AAAAAAAAAAAAAPf/AAAAAAAAAAAAAPj/AAAAAAAAAAAAAPn/AAAAAAAAAAAAAPr/AAAAAAAAAAAAAPv/AAAAAAAAAAAAAPz/AAAAAAAAAAAFAA4AAQABAAEAAAAGAA0AAQABAAEAAAAHAAwAAQABAAEAAAAIAAsAAAAAAAAAAAAFAA8AAQAAAAAAAAAGAA4AAQAAAAAAAAAHAA0AAQAAAAAAAAAIAAwAAQAAAAAAAAAEAA8AAQABAAEAAAAAANT/AAAAAAAAAAA=")
+tile_set = SubResource("TileSet_lbhrr")
+
+[node name="Player" type="RigidBody2D" parent="."]
+position = Vector2(-429, -2124)
+physics_material_override = SubResource("PhysicsMaterial_iywne")
+script = ExtResource("1_yqjtg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("CircleShape2D_yqjtg")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_uwrxv")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(292, 2028)
+rotation = -0.14361961
+texture = ExtResource("5_iywne")
