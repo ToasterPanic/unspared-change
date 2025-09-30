@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://br8hdjlqarh03"]
+
+[ext_resource type="Script" uid="uid://rm8valsavvo1" path="res://scenes/trampoline.gd" id="1_nytqh"]
+[ext_resource type="Texture2D" uid="uid://cfdxn8exh67p7" path="res://images/trampoline.png" id="2_1ne3y"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nytqh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5gay0"]
+size = Vector2(128, 38.5)
+
+[node name="Trampoline" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_nytqh")
+can_sleep = false
+freeze = true
+freeze_mode = 1
+contact_monitor = true
+max_contacts_reported = 100
+script = ExtResource("1_nytqh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_1ne3y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 9.25)
+shape = SubResource("RectangleShape2D_5gay0")
+
+[connection signal="body_entered" from="." to="." method="_body_entered"]
