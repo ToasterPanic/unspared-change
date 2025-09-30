@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://cety8hx6jifxc"]
+
+[ext_resource type="Script" uid="uid://bcqj2dhtqnnqv" path="res://scripts/title.gd" id="1_4ignj"]
+[ext_resource type="Texture2D" uid="uid://b3jo1ficxdvk5" path="res://images/siege-logo.png" id="2_wosw1"]
+
+[node name="Title" type="Node2D"]
+script = ExtResource("1_4ignj")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 342.0
+offset_bottom = 59.0
+text = "unspared change"
+
+[node name="Play" type="Button" parent="."]
+offset_left = 7.0
+offset_top = 87.0
+offset_right = 97.0
+offset_bottom = 118.0
+text = "play (easy)"
+
+[node name="PlayHardcore" type="Button" parent="."]
+offset_left = 12.0
+offset_top = 125.0
+offset_right = 53.0
+offset_bottom = 156.0
+text = "play (hard)"
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 26.0
+offset_top = 175.0
+offset_right = 67.0
+offset_bottom = 206.0
+text = "git outta ere"
+
+[node name="Siege" type="TextureButton" parent="."]
+offset_left = 21.0
+offset_top = 235.0
+offset_right = 2114.0
+offset_bottom = 1399.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("2_wosw1")
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="PlayHardcore" to="." method="_on_play_hardcore_pressed"]
+[connection signal="pressed" from="Siege" to="." method="_on_siege_pressed"]

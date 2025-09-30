@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://5nfnqklhc83o"]
+
+[ext_resource type="PackedScene" uid="uid://fmsat15rxsg" path="res://scenes/moving-platform.tscn" id="1_t3bpi"]
+[ext_resource type="Texture2D" uid="uid://b6pbrfobu72qa" path="res://images/moving-platform-up-down.png" id="2_hi8cs"]
+
+[node name="MovingPlatform" instance=ExtResource("1_t3bpi")]
+metadata/horizontial_speed = 0.0
+metadata/vertical_speed = 128.0
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_hi8cs")

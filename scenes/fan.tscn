@@ -1,0 +1,70 @@
+[gd_scene load_steps=12 format=3 uid="uid://beyxd4a1wyj5v"]
+
+[ext_resource type="PackedScene" uid="uid://br8hdjlqarh03" path="res://scenes/trampoline.tscn" id="1_p64dw"]
+[ext_resource type="Script" uid="uid://cksldvote46p4" path="res://scripts/fan.gd" id="2_h3fxe"]
+[ext_resource type="Texture2D" uid="uid://c0mpfrihynets" path="res://images/fan.png" id="2_ib1wi"]
+[ext_resource type="Texture2D" uid="uid://c83dbrsnrp5b" path="res://images/woosh1.png" id="4_4wrgw"]
+[ext_resource type="Texture2D" uid="uid://cr7uvl1a3jreh" path="res://images/woosh2.png" id="5_b17ye"]
+[ext_resource type="Texture2D" uid="uid://bkromnwkp0t5a" path="res://images/woosh3.png" id="6_nu1et"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ib1wi"]
+size = Vector2(128, 611)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4wrgw"]
+size = Vector2(128, 64)
+
+[sub_resource type="Curve" id="Curve_y4shf"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.70454544, 0.6067416), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_ccgpo"]
+curve = SubResource("Curve_y4shf")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_krpdk"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(64, 64, 0)
+direction = Vector3(0, -1, 0)
+spread = 0.556
+initial_velocity_max = 641.18
+gravity = Vector3(0, 0, 0)
+alpha_curve = SubResource("CurveTexture_ccgpo")
+hue_variation_min = -2.2351742e-08
+hue_variation_max = -2.2351742e-08
+turbulence_noise_strength = 0.0
+turbulence_noise_scale = 0.0
+
+[node name="Fan" instance=ExtResource("1_p64dw")]
+inertia = 1e+15
+script = ExtResource("2_h3fxe")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_ib1wi")
+
+[node name="Area2D" type="Area2D" parent="." index="1"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(0, -318.5)
+shape = SubResource("RectangleShape2D_ib1wi")
+debug_color = Color(0.7670618, 0.16563407, 0.99999994, 0.41960785)
+
+[node name="CollisionShape2D" parent="." index="2"]
+shape = SubResource("RectangleShape2D_4wrgw")
+
+[node name="Woosh1" type="GPUParticles2D" parent="." index="3"]
+position = Vector2(0, -64)
+amount = 4
+texture = ExtResource("4_4wrgw")
+process_material = SubResource("ParticleProcessMaterial_krpdk")
+
+[node name="Woosh2" type="GPUParticles2D" parent="." index="4"]
+position = Vector2(0, -64)
+amount = 4
+texture = ExtResource("5_b17ye")
+process_material = SubResource("ParticleProcessMaterial_krpdk")
+
+[node name="Woosh3" type="GPUParticles2D" parent="." index="5"]
+position = Vector2(0, -64)
+amount = 4
+texture = ExtResource("6_nu1et")
+process_material = SubResource("ParticleProcessMaterial_krpdk")

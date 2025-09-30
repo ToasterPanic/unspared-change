@@ -5,8 +5,8 @@
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nytqh"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5gay0"]
-size = Vector2(128, 38.5)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nytqh"]
+size = Vector2(128, 64)
 
 [node name="Trampoline" type="RigidBody2D"]
 physics_material_override = SubResource("PhysicsMaterial_nytqh")
@@ -22,6 +22,6 @@ texture = ExtResource("2_1ne3y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 9.25)
-shape = SubResource("RectangleShape2D_5gay0")
+shape = SubResource("RectangleShape2D_nytqh")
 
 [connection signal="body_entered" from="." to="." method="_body_entered"]

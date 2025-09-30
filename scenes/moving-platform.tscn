@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://fmsat15rxsg"]
+
+[ext_resource type="Script" uid="uid://yhw8r2tpl6ji" path="res://scenes/moving_platform.gd" id="1_05wh8"]
+[ext_resource type="Texture2D" uid="uid://qgt8ino1tlqp" path="res://images/moving-platform.png" id="2_05wh8"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nytqh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_05wh8"]
+size = Vector2(128, 64)
+
+[node name="MovingPlatform" type="RigidBody2D"]
+mass = 1000000000.0
+physics_material_override = SubResource("PhysicsMaterial_nytqh")
+gravity_scale = 0.0
+can_sleep = false
+freeze_mode = 1
+contact_monitor = true
+max_contacts_reported = 100
+linear_velocity = Vector2(128, 0)
+linear_damp_mode = 1
+script = ExtResource("1_05wh8")
+metadata/horizontial_speed = 96.0
+metadata/vertical_speed = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_05wh8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_05wh8")
+
+[connection signal="body_entered" from="." to="." method="_body_entered"]
