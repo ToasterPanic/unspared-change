@@ -19,3 +19,7 @@ func _input(event):
 	if event.is_action_pressed("reset"):
 		if global.checkpoint:
 			reset = true
+			
+func _on_body_entered(body: Node) -> void:
+	if body.get_name() == "KillTiles":
+		reset = true

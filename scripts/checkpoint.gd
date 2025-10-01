@@ -3,6 +3,8 @@ extends Node2D
 func _ready() -> void:
 	get_node("NoFlag").play()
 	get_node("Flag").play()
+	
+	global.checkpoints.push_front(get_name())
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if global.checkpoint == self:

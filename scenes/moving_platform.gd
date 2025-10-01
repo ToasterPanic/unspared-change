@@ -14,7 +14,7 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	
 	if abs(linear_velocity.x) < 12:
 		if abs(linear_velocity.y) < 12:
-			if get_meta("wait_until_area_touched"):
+			if has_meta("wait_until_area_touched") and get_meta("wait_until_area_touched"):
 				positive = true
 			else:
 				positive = not positive 

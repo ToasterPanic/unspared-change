@@ -8,5 +8,4 @@ extends Control
 
 func _process(delta: float) -> void:
 	var percent = (player.position.y - bottom) / (top - bottom)
-	print(percent)
 	$ProgressBar.value = percent * 100
