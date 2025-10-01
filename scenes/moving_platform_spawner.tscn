@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://r3b6af7es2cg"]
+
+[ext_resource type="Script" uid="uid://cyfj8lng4hva6" path="res://scripts/moving_platform_spawner.gd" id="1_ip8hk"]
+[ext_resource type="Texture2D" uid="uid://c4hy2ws68h3v8" path="res://images/moving-platform-spawner.png" id="2_mkdef"]
+
+[node name="MovingPlatformSpawner" type="Node2D"]
+script = ExtResource("1_ip8hk")
+metadata/horizontial_speed = 96.0
+metadata/vertical_speed = 0.0
+metadata/interval = 2.5
+metadata/lifetime = 10.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_mkdef")

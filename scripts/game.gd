@@ -56,3 +56,8 @@ func _on_zoom_camera_in_body_entered(body: Node2D) -> void:
 func _on_fade_parallax_2_body_entered(body: Node2D) -> void:
 	if body.get_name() == "Player":
 		currentParallax = $Parallaxes/Parallax2
+
+
+func _on_fade_parallax_3_body_entered(body: Node2D) -> void:
+	if body.get_name() == "Player":
+		currentParallax = $Parallaxes/Parallax3
