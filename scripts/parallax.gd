@@ -7,6 +7,7 @@ func _process(delta):
 		
 		if get_name() == "Parallax3":
 			get_node("ParallaxFront").position.y -= 20000
+			get_node("ParallaxFront").position.x += 500
 		elif get_name() == "Parallax2":
 			get_node("ParallaxFront").position.y -= 7500
 		else:

@@ -28,6 +28,7 @@ func checkpoint(point: String) -> void:
 func _ready() -> void:
 	if global.hardcore_mode:
 		get_node("Level/EasyModeLayer").free()
+		get_node("Interactables/Easy").free()
 	
 	LimboConsole.register_command(checkpoint)
 		

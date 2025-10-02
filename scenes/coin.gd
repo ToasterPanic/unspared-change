@@ -21,5 +21,9 @@ func _input(event):
 			reset = true
 			
 func _on_body_entered(body: Node) -> void:
+	print(body.get_name())
+	
 	if body.get_name() == "KillTiles":
+		reset = true
+	if (body.get_class() == "RigidBody2D") and body.has_meta("Laser"):
 		reset = true

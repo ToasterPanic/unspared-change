@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://8rioctg5jh7j"]
+
+[ext_resource type="Script" uid="uid://thstvir1kla2" path="res://scripts/laser_gun.gd" id="1_vbejg"]
+[ext_resource type="Texture2D" uid="uid://dgs31fmtj4vht" path="res://images/laser_gun.png" id="2_1nrhr"]
+
+[node name="LaserGun" type="Node2D"]
+script = ExtResource("1_vbejg")
+metadata/horizontial_speed = 96.0
+metadata/vertical_speed = 0.0
+metadata/interval = 2.5
+metadata/lifetime = 10.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_1nrhr")
