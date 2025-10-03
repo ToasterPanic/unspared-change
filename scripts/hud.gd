@@ -9,3 +9,7 @@ extends Control
 func _process(delta: float) -> void:
 	var percent = (player.position.y - bottom) / (top - bottom)
 	$ProgressBar.value = percent * 100
+
+
+func _on_close_menu_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/title.tscn")

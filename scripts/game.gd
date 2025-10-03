@@ -26,9 +26,18 @@ func checkpoint(point: String) -> void:
 	LimboConsole.info("Set checkpoint to " + point)
 
 func _ready() -> void:
-	if global.hardcore_mode:
+	if global.difficulty != "easy":
 		get_node("Level/EasyModeLayer").free()
 		get_node("Interactables/Easy").free()
+	
+	if global.difficulty == "hardcore":
+		for n in $Interactables.get_children():
+			if n.get_node("NoFlag"):
+				if n.get_name() != "1-1":
+					n.queue_free()
+	else:
+		get_node("Level/HardcoreModeLayer").free()
+		get_node("Interactables/Hardcore").free()
 	
 	LimboConsole.register_command(checkpoint)
 		
@@ -62,3 +71,9 @@ func _on_fade_parallax_2_body_entered(body: Node2D) -> void:
 func _on_fade_parallax_3_body_entered(body: Node2D) -> void:
 	if body.get_name() == "Player":
 		currentParallax = $Parallaxes/Parallax3
+
+
+func _on_the_end_body_entered(body: Node2D) -> void:
+	if body.get_name() == "Player":
+		$Player.freeze = true
+		$CanvasLayer/Control/TheEnd.visible = true

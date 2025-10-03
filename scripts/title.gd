@@ -5,16 +5,17 @@ func _process(delta: float) -> void:
 	var size = get_viewport().get_visible_rect().size
 	$CanvasLayer/Control.custom_minimum_size = size
 
-func _on_play_pressed() -> void:
+func _on_play_easy_pressed() -> void:
+	global.difficulty = "easy"
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
-	# pass # Replace with function body.
 
+func _on_play_pressed() -> void:
+	global.difficulty = "normal"
+	get_tree().change_scene_to_file("res://scenes/game.tscn")
 
 func _on_play_hardcore_pressed() -> void:
-	global.hardcore_mode = true
+	global.difficulty = "hardcore"
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
-	pass # Replace with function body.
-
 
 func _on_siege_pressed() -> void:
 	OS.shell_open("https://siege.hackclub.com")

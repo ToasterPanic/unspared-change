@@ -210,7 +210,6 @@ grow_horizontal = 0
 text = "X"
 
 [node name="PlayMenu" type="Panel" parent="CanvasLayer/Control"]
-visible = false
 custom_minimum_size = Vector2(800, 480)
 layout_mode = 1
 anchors_preset = 8
@@ -290,11 +289,11 @@ anchor_right = 1.0
 offset_bottom = 349.0
 grow_horizontal = 2
 bbcode_enabled = true
-text = "[font size=32]Easy[/font]
+text = "[font size=32]Practice[/font]
 [font size=22]
 - Use checkpoints to practice sections
 - No achievements
-- For tryhards and stonemasons
+- Select any difficulty to practice
 [/font]"
 horizontal_alignment = 1
 
@@ -307,8 +306,8 @@ anchor_bottom = 1.0
 offset_top = -85.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_font_sizes/font_size = 48
-text = "PLAY!"
+theme_override_font_sizes/font_size = 28
+text = "SOON..."
 
 [node name="Normal" type="Control" parent="CanvasLayer/Control/PlayMenu"]
 custom_minimum_size = Vector2(192, 0)
@@ -410,8 +409,8 @@ text = "X"
 [connection signal="pressed" from="CanvasLayer/Control/HFlowContainer/Siege" to="." method="_on_siege_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/ExtrasCredits/CloseMenu" to="." method="_on_close_menu_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/Settings/CloseMenu" to="." method="_on_close_menu_pressed"]
-[connection signal="pressed" from="CanvasLayer/Control/PlayMenu/Easy/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/PlayMenu/Easy/Play" to="." method="_on_play_easy_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/PlayMenu/Practice/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="CanvasLayer/Control/PlayMenu/Normal/Play" to="." method="_on_play_hardcore_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/PlayMenu/Normal/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/PlayMenu/Hardcore/Play" to="." method="_on_play_hardcore_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/PlayMenu/CloseMenu" to="." method="_on_close_menu_pressed"]
