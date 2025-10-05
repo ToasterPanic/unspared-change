@@ -2,7 +2,9 @@
 
 Unspared Change is a Getting Over It-style game about rolling around as a coin. Using the power of Physics™, torture yourself on three different difficulties, with obstacles ranging from ramps and trampolines to lasers and spikes blocking your way to the top.
 
-## Check out the video demo [here](https://youtu.be/dWBhqZT8SFI), or play the game for yourself [here](https://gamejolt.com/games/unspared-change/1021799)
+#### Check out the video demo [here](https://youtu.be/dWBhqZT8SFI), or play the game for yourself [here](https://gamejolt.com/games/unspared-change/1021799)
+
+## Credits
  
 Music by <a href="https://pixabay.com/users/tunetank-50201703/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=348133">Tunetank</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=348133">Pixabay</a>
 
